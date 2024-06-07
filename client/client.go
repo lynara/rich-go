@@ -60,8 +60,8 @@ func SetActivity(activity Activity) error {
 	}
 
 	// TODO: Response should be parsed
-	ipc.Send(1, string(payload))
-	return nil
+	_, err = ipc.Send(1, string(payload))
+	return err
 }
 
 func getNonce() string {
